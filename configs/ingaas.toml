@@ -1,0 +1,29 @@
+# InGaAs (short-wave infrared) preset.
+# Assumes the tracking camera sees the 1550 nm beam directly.
+# Synthetic values, illustrative of a Sony IMX990-class sensor. Compared with
+# two IMX990 camera datasheets: read
+# noise and full well are within 40%; dark current here is 31 times the
+# published 638 e/s at 20 C.
+
+[camera]
+shape = [32, 32]                  # (height, width)
+exposure_s = 0.0005               # leaves readout time inside a 1 kHz frame period
+read_noise_e = 180.0
+dark_current_e_per_s = 20_000.0   # strongly temperature dependent
+full_well_e = 120_000.0
+bit_depth = 12
+bias_dn = 100.0
+prnu_std = 0.02
+hot_pixel_fraction = 0.005        # defective pixels are more common in InGaAs
+hot_pixel_dark_multiplier = 500.0 # illustrative assumption
+
+[spot]
+center_xy = [15.3, 14.7]
+sigma_x = 1.75                    # 1/e^2 diameter = 4 * sigma = 7 px
+sigma_y = 1.75
+total_signal_e = 1_000_000.0      # peak pixel at roughly 40% of full well
+
+[background]
+level_e = 200.0                   # at the image centre
+gradient_x_e_per_px = 4.0
+gradient_y_e_per_px = 2.0

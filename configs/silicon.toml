@@ -1,0 +1,30 @@
+# Silicon CMOS preset.
+# Assumes the tracking camera sees a beacon at a silicon-visible wavelength
+# (below ~1000 nm), not the 1550 nm data beam.
+# Synthetic values, typical of a small-pixel global-shutter CMOS sensor.
+# Compared with a camera built on the Sony IMX273: read
+# noise and full well are close; dark current here is 11 times the published
+# 4.63 e/s and pixel-gain non-uniformity twice the published 0.49%.
+
+[camera]
+shape = [32, 32]                  # (height, width)
+exposure_s = 0.0005               # leaves readout time inside a 1 kHz frame period
+read_noise_e = 3.0
+dark_current_e_per_s = 50.0
+full_well_e = 10_000.0
+bit_depth = 12
+bias_dn = 100.0
+prnu_std = 0.01
+hot_pixel_fraction = 0.001
+hot_pixel_dark_multiplier = 10_000.0   # deliberately extreme stress test
+
+[spot]
+center_xy = [15.3, 14.7]
+sigma_x = 1.75                    # 1/e^2 diameter = 4 * sigma = 7 px
+sigma_y = 1.75
+total_signal_e = 10_000.0
+
+[background]
+level_e = 10.0                    # at the image centre
+gradient_x_e_per_px = 0.3
+gradient_y_e_per_px = 0.2

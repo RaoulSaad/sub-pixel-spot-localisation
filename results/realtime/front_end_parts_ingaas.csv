@@ -1,0 +1,8 @@
+preset,step,median_us,p99_us,max_us,floor_us
+ingaas,DN to electrons,2.084,2.417,9.25,2.042
+ingaas,"Background plane, rough (all pixels)",53.291,54.88041,90.5,51.729
+ingaas,"Peak search (3 x 3 box, maximum)",31.417,34.459410000000005,71.834,30.958
+ingaas,"Background plane, final (spot excluded)",57.167,58.63915999999999,105.5,56.708
+ingaas,Cut window,1.542,1.708,7.834,1.5
+ingaas,Centroid of window (re-centring check),9.125,9.58301,26.75,9.0
+ingaas,Whole front end,172.417,181.50375,254.042,170.3125
